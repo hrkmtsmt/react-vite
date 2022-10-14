@@ -23,7 +23,10 @@ yarn add \
 axios \
 react-router-dom \
 recoil \
-sass
+sass \
+&& \
+yarn add -D \
+typed-scss-modules
 ```
 
 - AXIOS https://axios-http.com/docs/intro
