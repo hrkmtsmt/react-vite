@@ -15,7 +15,7 @@ ts-node \
 @types/node
 ```
 
-- ts-nod  
+- ts-node  
   https://typestrong.org/ts-node/
 
 ## Main
@@ -39,7 +39,7 @@ typed-scss-modules
   https://recoiljs.org/
 - Sass  
   https://sass-lang.com/
-- typed-scss-modules
+- typed-scss-modules  
   https://www.npmjs.com/package/typed-scss-modules
 
 ## Test
