@@ -53,7 +53,8 @@ jest-environment-jsdom \
 ```
 yarn add -D \
 prettier \
-eslint
+eslint \
+eslint-plugin-react-hooks
 ```
 
 - ESLint https://eslint.org/

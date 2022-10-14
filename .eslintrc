@@ -9,8 +9,10 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["strict-dependencies", "react"],
+  "plugins": ["strict-dependencies", "react", "react-hooks"],
   "rules": {
-    "semi": "warn"
+    "semi": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn" 
   }
 }
