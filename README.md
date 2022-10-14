@@ -10,11 +10,13 @@ https://vitejs.dev/
 
 ```
 yarn add -D \
+typescript \
 ts-node \
 @types/node
 ```
 
-- ts-node https://typestrong.org/ts-node/
+- ts-nod  
+  https://typestrong.org/ts-node/
 
 ## Main
 
@@ -29,10 +31,16 @@ yarn add -D \
 typed-scss-modules
 ```
 
-- AXIOS https://axios-http.com/docs/intro
-- React Router https://reactrouter.com/en/main
-- Recoil https://recoiljs.org/
-- Sass https://sass-lang.com/
+- AXIOS  
+  https://axios-http.com/docs/intro
+- React Router  
+  https://reactrouter.com/en/main
+- Recoil  
+  https://recoiljs.org/
+- Sass  
+  https://sass-lang.com/
+- typed-scss-modules
+  https://www.npmjs.com/package/typed-scss-modules
 
 ## Test
 
@@ -46,10 +54,14 @@ jest-environment-jsdom \
 @types/jest
 ```
 
-- Testing Library https://testing-library.com/
-- React Hooks Testing Library https://react-hooks-testing-library.com/
-- Jest https://jestjs.io/
-- ts-jest https://kulshekhar.github.io/ts-jest/
+- Testing Library  
+  https://testing-library.com/
+- React Hooks Testing Library  
+  https://react-hooks-testing-library.com/
+- Jest  
+  https://jestjs.io/
+- ts-jest  
+  https://kulshekhar.github.io/ts-jest/
 
 ## Linter and Formatter
 
@@ -60,5 +72,9 @@ eslint \
 eslint-plugin-react-hooks
 ```
 
-- ESLint https://eslint.org/
-- Prettier https://prettier.io/
+- ESLint  
+  https://eslint.org/
+- Prettier  
+  https://prettier.io/
+- eslint-plugin-react-hooks  
+  https://www.npmjs.com/package/eslint-plugin-react-hooks
