@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const App: React.FC = () => {
+export const Index: React.FC = () => {
   const [count, setCount] = useState<number>(0);
   const onClick = {
     increment: () => setCount((prevCount) => prevCount + 1),
