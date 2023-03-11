@@ -46,22 +46,18 @@ typed-scss-modules
 
 ```
 yarn add -D \
-jest \
-ts-jest \
-jest-environment-jsdom \
+vitest \
+jestdom \
 @testing-library/react \
 @testing-library/react-hooks \
-@types/jest
 ```
 
 - Testing Library  
   https://testing-library.com/
 - React Hooks Testing Library  
   https://react-hooks-testing-library.com/
-- Jest  
-  https://jestjs.io/
-- ts-jest  
-  https://kulshekhar.github.io/ts-jest/
+- Vitest
+	https://vitest.dev/
 
 ## Linter and Formatter
 
