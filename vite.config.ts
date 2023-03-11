@@ -1,5 +1,5 @@
 import path from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
 const srcDir = path.join(__dirname, 'src/');
@@ -9,9 +9,13 @@ export default defineConfig({
   root: srcDir,
   publicDir,
   plugins: [react()],
+	test: {
+		environment: 'jsdom',
+	},
   resolve: {
     alias: {
       '@src/': srcDir
     }
-  }
+  },
 });
+
