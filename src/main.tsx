@@ -5,8 +5,10 @@ import { router } from '@src/router';
 
 const container = document.getElementById('app');
 
-if (container) {
-  ReactDOM.createRoot(container).render(
+if (container !== null) {
+  const root = ReactDOM.createRoot(container);
+
+  root.render(
     <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode>

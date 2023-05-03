@@ -2,6 +2,7 @@ import path from 'path';
 import { loadEnv } from 'vite';
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import checker from 'vite-plugin-checker'
 
 const srcDir = path.join(__dirname, 'src/');
 const envDir = path.join(__dirname, '.env/');
@@ -12,7 +13,15 @@ export default defineConfig(({ mode }) => {
   return {
     publicDir,
     envDir,
-    plugins: [react()],
+    plugins: [
+      react(),
+      checker({
+        typescript: true,
+        eslint: {
+          lintCommand: `eslint "${srcDir}/**/*.{ts,tsx}"`
+        }
+      })
+    ],
     test: {
       environment: 'jsdom',
     },
