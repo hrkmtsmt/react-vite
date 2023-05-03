@@ -9,10 +9,20 @@
     "test": "vitest run",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "postinstall": "husky install",
+    "format": "prettier --write . --config ./.prettierrc",
     "dev:serve": "vite --host localhost",
-    "prettier:watch": "onchange \"./**/*.{ts,tsx,json}\" -- prettier --write . --config ./.prettierrc {{changed}}",
-    "test:watch": "vitest watch",
-    "postinstall": "husky install"
+    "prettier:watch": "onchange \"./**/*.{ts,tsx,json}\" -- prettier --write src --config ./.prettierrc {{changed}}",
+    "test:watch": "vitest watch"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,d.ts}": [
+      "bash -c tsc --noEmit",
+      "yarn eslint",
+      "yarn test"
+    ],
+    "**/*.{ts,tsx,d.ts,json,css,scss}": "yarn format",
+    "*": "yarn cspell '**'"
   },
   "dependencies": {
     "axios": "^1.1.2",

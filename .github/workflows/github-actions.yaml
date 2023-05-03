@@ -5,7 +5,6 @@ run-name: Created by ${{ github.actor }}
 on: [push]
 
 jobs:
-
   tsc:
     runs-on: ubuntu-latest
     timeout-minutes: 3
@@ -44,7 +43,7 @@ jobs:
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Test
         run: yarn test
-        
+
   cspell:
     runs-on: ubuntu-latest
     timeout-minutes: 3
