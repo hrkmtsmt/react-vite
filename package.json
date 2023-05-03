@@ -27,7 +27,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "@vitejs/plugin-react": "^3.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "cspell": "^6.31.1",
     "concurrently": "^8.0.0",
     "eslint": "^8.0.1",
