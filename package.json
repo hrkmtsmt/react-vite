@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"yarn dev:serve\" \"yarn prettier:watch\"",
-    "test": "vitest",
+    "test": "vitest run",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "dev:serve": "vite --host localhost",
