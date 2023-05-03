@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          node-version: '16.17.1'
+          node-version: '18.16.0'
       - name: Install Packages
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Type Check
@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          node-version: '16.17.1'
+          node-version: '18.16.0'
       - name: Install Packages
         run: yarn install --immutable --immutable-cache --check-cache
       - name: ESLint
@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          node-version: '16.17.1'
+          node-version: '18.16.0'
       - name: Install Packages
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Test
