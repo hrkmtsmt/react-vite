@@ -44,3 +44,16 @@ jobs:
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Test
         run: yarn test
+        
+  cspell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    if: ${{ github.event.pull_request.draft == false }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          node-version: '18.16.0'
+      - name: Install Packages
+        run: yarn install --immutable --immutable-cache --check-cache
+      - name: Spell Check
+        run: yarn cspell "**"

@@ -39,7 +39,6 @@ recoil \
 ```
 yarn add -D \
 vitest \
-jestdom \
 @testing-library/react \
 @testing-library/react-hooks \
 ```

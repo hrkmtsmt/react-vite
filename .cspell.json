@@ -1,4 +1,8 @@
 {
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**"
+  ],
   "words": [
     "vitest"
   ]
