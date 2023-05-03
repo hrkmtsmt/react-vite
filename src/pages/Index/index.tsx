@@ -14,6 +14,8 @@ export const Index: React.FC = () => {
     }
   };
 
+  console.log('hello world!');
+
   return (
     <div>
       <input type='text' value={count} disabled />
