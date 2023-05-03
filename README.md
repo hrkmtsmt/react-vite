@@ -25,10 +25,6 @@ yarn add \
 axios \
 react-router-dom \
 recoil \
-sass \
-&& \
-yarn add -D \
-typed-scss-modules
 ```
 
 - AXIOS  
@@ -37,10 +33,6 @@ typed-scss-modules
   https://reactrouter.com/en/main
 - Recoil  
   https://recoiljs.org/
-- Sass  
-  https://sass-lang.com/
-- typed-scss-modules  
-  https://www.npmjs.com/package/typed-scss-modules
 
 ## Test
 
