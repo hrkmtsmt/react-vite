@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"yarn dev:serve\" \"yarn prettier:watch\"",
+    "dev": "concurrently \"yarn dev:serve\" \"yarn prettier:watch\" \"yarn test:watch\"",
+    "dev:no-test": "concurrently \"yarn dev:serve\" \"yarn prettier:watch\"",
     "test": "vitest run",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "dev:serve": "vite --host localhost",
-    "prettier:watch": "onchange \"./**/*.{ts,tsx,json}\" -- prettier --write . --config ./.prettierrc {{changed}}"
+    "prettier:watch": "onchange \"./**/*.{ts,tsx,json}\" -- prettier --write . --config ./.prettierrc {{changed}}",
+    "test:watch": "vitest watch"
   },
   "dependencies": {
     "axios": "^1.1.2",
