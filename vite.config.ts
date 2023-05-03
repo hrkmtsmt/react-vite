@@ -2,14 +2,13 @@ import path from 'path';
 import { loadEnv } from 'vite';
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
-import checker from 'vite-plugin-checker'
+import checker from 'vite-plugin-checker';
 
 const srcDir = path.join(__dirname, 'src/');
 const envDir = path.join(__dirname, '.env/');
 const publicDir = path.join(__dirname, 'public/');
 
 export default defineConfig(({ mode }) => {
-
   return {
     publicDir,
     envDir,
@@ -23,14 +22,13 @@ export default defineConfig(({ mode }) => {
       })
     ],
     test: {
-      environment: 'jsdom',
+      environment: 'jsdom'
     },
     resolve: {
       alias: {
         '@src/': srcDir
       }
     },
-    define: { 'process.env': loadEnv(mode, envDir) },
-  }
+    define: { 'process.env': loadEnv(mode, envDir) }
+  };
 });
-

@@ -5,5 +5,12 @@
   "jsxSingleQuote": true,
   "trailingComma": "none",
   "semi": true,
-  "parser": "typescript"
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
 }

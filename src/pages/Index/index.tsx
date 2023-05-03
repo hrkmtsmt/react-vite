@@ -4,13 +4,13 @@ export const Index: React.FC = () => {
   const [count, setCount] = useState<number>(0);
   const onClick = {
     increment: () => {
-      setCount((prevCount) => prevCount + 1)
+      setCount((prevCount) => prevCount + 1);
     },
     decrement: () => {
-      setCount((prevCount) => prevCount - 1)
+      setCount((prevCount) => prevCount - 1);
     },
     reset: () => {
-      setCount(0)
+      setCount(0);
     }
   };
 
