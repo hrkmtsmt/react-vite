@@ -22,7 +22,8 @@ export default defineConfig(({ mode }) => {
       })
     ],
     test: {
-      environment: 'jsdom'
+      environment: 'jsdom',
+      include: ['**/*.{test,spec}.*']
     },
     resolve: {
       alias: {

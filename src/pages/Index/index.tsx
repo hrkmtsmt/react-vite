@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const Index: React.FC = () => {
   const [count, setCount] = useState<number>(0);
@@ -13,6 +13,10 @@ export const Index: React.FC = () => {
       setCount(0);
     }
   };
+
+  useEffect(() => {
+    console.log(count);
+  }, []);
 
   return (
     <div>
