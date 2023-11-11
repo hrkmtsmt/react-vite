@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"yarn dev:serve\" \"yarn test:watch\"",
+    "ci": "yarn install --immutable --immutable-cache --check-cache",
     "test": "vitest run --config ./vite.config.ts",
     "spell-check": "cspell '**'",
     "build": "tsc && vite build",

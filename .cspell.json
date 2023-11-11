@@ -1,4 +1,4 @@
 {
   "ignorePaths": ["node_modules/**", "dist/**", ".yarn/**", "./yarn-error.log"],
-  "words": ["vitest", "ntvs", "njsproj"]
+  "words": ["vite", "vitest", "ntvs", "njsproj"]
 }
