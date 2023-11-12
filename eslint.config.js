@@ -11,7 +11,7 @@ import typescriptEslintParser from '@typescript-eslint/parser';
 const eslintConfig = {
   ignores: ['./dist'],
   plugins: {
-    functional: eslintPluginFunctional
+    functional: eslintPluginFunctional,
   },
   rules: {
     'no-console': ['error', { allow: ['warn', 'error'] }],
@@ -20,9 +20,9 @@ const eslintConfig = {
     'functional/no-let': ['error', { allowInForLoopInit: false, allowInFunctions: false }],
     'functional/immutable-data': [
       'error',
-      { ignoreImmediateMutation: true, ignoreClasses: true, ignoreAccessorPattern: ['draft*.*'] }
-    ]
-  }
+      { ignoreImmediateMutation: true, ignoreClasses: true, ignoreAccessorPattern: ['draft*.*'] },
+    ],
+  },
 };
 
 /** @type FlatConfig */
@@ -31,26 +31,27 @@ const typescriptConfig = {
   languageOptions: {
     parser: typescriptEslintParser,
     parserOptions: {
-      project: ['./tsconfig.json', './tsconfig.node.json']
-    }
+      project: ['./tsconfig.json', './tsconfig.node.json'],
+    },
   },
   plugins: {
-    '@typescript-eslint': typescriptEslint
+    '@typescript-eslint': typescriptEslint,
   },
   rules: {
     ...eslintConfigStandardWithTypescript.rules,
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/semi': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
         multiline: { delimiter: 'comma', requireLast: true },
         singleline: { delimiter: 'comma', requireLast: false },
-        overrides: { interface: { multiline: { delimiter: 'semi', requireLast: true } } }
-      }
-    ]
-  }
+        overrides: { interface: { multiline: { delimiter: 'semi', requireLast: true } } },
+      },
+    ],
+  },
 };
 
 /** @type FlatConfig */
@@ -58,25 +59,25 @@ const reactConfig = {
   files: ['**/*.ts', '**/*.tsx'],
   settings: {
     react: {
-      version: 'detect'
+      version: 'detect',
     },
     'import/resolver': {
       node: {
-        extensions: ['.ts', '.tsx']
+        extensions: ['.ts', '.tsx'],
       },
-      typescript: {}
-    }
+      typescript: {},
+    },
   },
   plugins: {
     react: eslintPluginReact,
-    'react-hooks': eslintPluginReactHooks
+    'react-hooks': eslintPluginReactHooks,
   },
   rules: {
     ...eslintPluginReactHooks.configs.recommended.rules,
     ...eslintPluginReact.configs.recommended.rules,
     // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-leaked-render.md
-    'react/jsx-no-leaked-render': ['error', { validStrategies: ['ternary', 'coerce'] }]
-  }
+    'react/jsx-no-leaked-render': ['error', { validStrategies: ['ternary', 'coerce'] }],
+  },
 };
 
 /** @type Array<FlatConfig> */

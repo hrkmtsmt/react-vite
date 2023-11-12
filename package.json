@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "app-name",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "test": "vitest run --config ./vite.config.ts",
     "spell-check": "cspell '**'",
     "lint": "eslint --config eslint.config.js .",
-    "format": "prettier --write . --config ./.prettierrc",
+    "format": "prettier --write . --config ./prettier.config.js",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "postinstall": "husky install",
@@ -43,7 +43,6 @@
     "concurrently": "8.2.2",
     "cspell": "8.0.0",
     "eslint": "8.53.0",
-    "eslint-config-prettier": "9.0.0",
     "eslint-config-standard-with-typescript": "39.1.1",
     "eslint-plugin-functional": "6.0.0",
     "eslint-plugin-import": "2.29.0",

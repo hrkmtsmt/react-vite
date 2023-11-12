@@ -31,7 +31,7 @@ jobs:
       - name: ESLint
         run: yarn eslint --config eslint.config.js .
         env:
-          ESLINT_USE_FLAT_CONFIG: true 
+          ESLINT_USE_FLAT_CONFIG: true
 
   test:
     runs-on: ubuntu-latest

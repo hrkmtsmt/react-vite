@@ -11,7 +11,7 @@ export const Index: React.FC = () => {
     },
     reset: () => {
       setCount(0);
-    }
+    },
   };
 
   // useEffect(() => {
@@ -30,7 +30,7 @@ export const Index: React.FC = () => {
 
   return (
     <div>
-      <input type='text' value={count} disabled />
+      <input type="text" value={count} disabled />
       <div>
         <button onClick={onClick.decrement}>Decrement</button>
         <button onClick={onClick.increment}>Increment</button>

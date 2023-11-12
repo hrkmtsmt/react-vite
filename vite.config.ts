@@ -14,13 +14,13 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), checker({ typescript: true })],
     test: {
       environment: 'jsdom',
-      include: ['**/*.{test,spec}.*']
+      include: ['**/*.{test,spec}.*'],
     },
     resolve: {
       alias: {
-        '@src/': srcDir
-      }
+        '@src/': srcDir,
+      },
     },
-    define: { 'process.env': loadEnv(mode, envDir) }
+    define: { 'process.env': loadEnv(mode, envDir) },
   };
 });

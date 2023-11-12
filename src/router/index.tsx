@@ -5,6 +5,6 @@ import { Index } from '@src/pages/Index';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Index />
-  }
+    element: <Index />,
+  },
 ]);
