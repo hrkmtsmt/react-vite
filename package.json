@@ -8,7 +8,7 @@
     "ci": "yarn install --immutable --immutable-cache --check-cache",
     "test": "vitest run --config ./vite.config.ts",
     "spell-check": "cspell '**'",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint .",
+    "lint": "eslint --config eslint.config.js .",
     "format": "prettier --write . --config ./.prettierrc",
     "build": "tsc && vite build",
     "preview": "vite preview",

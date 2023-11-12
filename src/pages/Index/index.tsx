@@ -36,7 +36,7 @@ export const Index: React.FC = () => {
         <button onClick={onClick.increment}>Increment</button>
       </div>
       <button onClick={onClick.reset}>Reset</button>
-      {/* {0 && <div />}s */}
+      {/* {0 && <div />} */}
     </div>
   );
 };
