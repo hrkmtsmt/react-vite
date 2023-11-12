@@ -4,16 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"yarn dev:serve\" \"yarn test:watch\"",
+    "dev": "concurrently \"yarn dev:serve\" \"yarn test:watch\" \"yarn lint\" \"yarn format\"",
     "ci": "yarn install --immutable --immutable-cache --check-cache",
     "test": "vitest run --config ./vite.config.ts",
     "spell-check": "cspell '**'",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint .",
+    "format": "prettier --write . --config ./.prettierrc",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "postinstall": "husky install",
     "dev:serve": "vite --host localhost",
     "dev:no-test": "concurrently \"yarn dev:serve\"",
-    "prettier:format": "prettier --write . --config ./.prettierrc",
     "test:watch": "vitest watch",
     "test:related": "vitest related --run"
   },
@@ -21,9 +22,9 @@
     "src/**/*": "yarn test:related",
     "src/**/*.{ts,tsx,d.ts}": [
       "bash -c tsc --noEmit",
-      "yarn eslint"
+      "yarn lint"
     ],
-    "**/*.{ts,tsx,d.ts,json,css,scss}": "yarn prettier:format",
+    "**/*.{ts,tsx,d.ts,json,css,scss}": "yarn format",
     "*": "yarn spell-check"
   },
   "dependencies": {
@@ -44,6 +45,7 @@
     "eslint": "8.53.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-config-standard-with-typescript": "39.1.1",
+    "eslint-plugin-functional": "6.0.0",
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-n": "16.3.1",
     "eslint-plugin-promise": "6.1.1",

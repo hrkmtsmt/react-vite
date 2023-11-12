@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 export const Index: React.FC = () => {
   const [count, setCount] = useState<number>(0);
@@ -14,9 +14,19 @@ export const Index: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(count);
-  }, []);
+  // useEffect(() => {
+  //   let a = 0;
+  //   a = 1;
+
+  //   console.log(count);
+  //   const draftState = { a: '' };
+  //   draftState.a = '';
+  //   const arr = [''];
+  //   arr.sort();
+
+  //   const unused = 100;
+
+  // }, []);
 
   return (
     <div>
@@ -26,6 +36,7 @@ export const Index: React.FC = () => {
         <button onClick={onClick.increment}>Increment</button>
       </div>
       <button onClick={onClick.reset}>Reset</button>
+      {/* {0 && <div />}s */}
     </div>
   );
 };

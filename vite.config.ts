@@ -1,8 +1,7 @@
 import path from 'path';
-import { loadEnv } from 'vite';
-import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
+import { loadEnv, defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
+import react from '@vitejs/plugin-react';
 
 const srcDir = path.join(__dirname, 'src/');
 const envDir = path.join(__dirname, '.env/');
@@ -12,15 +11,7 @@ export default defineConfig(({ mode }) => {
   return {
     publicDir,
     envDir,
-    plugins: [
-      react(),
-      checker({
-        typescript: true,
-        eslint: {
-          lintCommand: `eslint "${srcDir}/**/*.{ts,tsx}"`
-        }
-      })
-    ],
+    plugins: [react(), checker({ typescript: true })],
     test: {
       environment: 'jsdom',
       include: ['**/*.{test,spec}.*']
