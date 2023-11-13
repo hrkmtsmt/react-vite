@@ -38,6 +38,8 @@ const typescriptConfig = {
     '@typescript-eslint': typescriptEslint,
   },
   rules: {
+    // ...typescriptEslint.rules,
+    ...typescriptEslint.configs.recommended.rules,
     ...eslintConfigStandardWithTypescript.rules,
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/triple-slash-reference': 'error',
