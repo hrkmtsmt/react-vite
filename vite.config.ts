@@ -21,6 +21,11 @@ export default defineConfig(({ mode }) => {
         '@src/': srcDir,
       },
     },
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
     define: { 'process.env': loadEnv(mode, envDir) },
   };
 });
