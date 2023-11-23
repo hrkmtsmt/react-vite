@@ -13,8 +13,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           node-version: '18.16.0'
-      - nama: Enable Corepack
-        run: corepack enable yarn
       - name: Install Packages
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Type Check
@@ -28,8 +26,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           node-version: '18.16.0'
-      - nama: Enable Corepack
-        run: corepack enable yarn
       - name: Install Packages
         run: yarn install --immutable --immutable-cache --check-cache
       - name: ESLint
@@ -45,8 +41,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           node-version: '18.16.0'
-      - nama: Enable Corepack
-        run: corepack enable yarn
       - name: Install Packages
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Test
@@ -60,8 +54,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           node-version: '18.16.0'
-      - nama: Enable Corepack
-        run: corepack enable yarn
       - name: Install Packages
         run: yarn install --immutable --immutable-cache --check-cache
       - name: Spell Check
