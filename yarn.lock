@@ -2502,10 +2502,10 @@ eslint-plugin-react@7.33.2:
     semver "^6.3.1"
     string.prototype.matchall "^4.0.8"
 
-eslint-plugin-strict-dependencies@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-strict-dependencies/-/eslint-plugin-strict-dependencies-1.2.3.tgz#604e7b75713ae4c9186d878a9108876c7a7153b4"
-  integrity sha512-Ziz3wk/rETLNbtXwnHlC32VkPGkLnvRbHDSxunAXbL/WEpQRS7KkxG3TdXYkrQ+CIz67+e4uzjQsW0eF48ZTuQ==
+eslint-plugin-strict-dependencies@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-strict-dependencies/-/eslint-plugin-strict-dependencies-1.3.4.tgz#2a0024c34798f5fa40c9170901a6418bf8d5554c"
+  integrity sha512-IIbqR+IFxlGFBAeA4Pa50mOcJ+x9wJ258egnVga07jWQJjWgonRoruZeZEsXCwB9ElbH7TSoLbCrZteJdv+X2w==
   dependencies:
     is-glob "4.0.3"
     micromatch "4.0.5"
