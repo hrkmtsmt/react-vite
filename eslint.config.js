@@ -1,17 +1,31 @@
 /** @typedef { import("eslint").Linter.FlatConfig } FlatConfig */
 
-import eslintPluginFunctional from 'eslint-plugin-functional';
-import eslintConfigStandardWithTypescript from 'eslint-config-standard-with-typescript';
-import eslintPluginReact from 'eslint-plugin-react';
-import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import typescriptEslintParser from '@typescript-eslint/parser';
+import globals from 'globals';
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import functional from 'eslint-plugin-functional';
+import react from 'eslint-plugin-react';
+import hooks from 'eslint-plugin-react-hooks';
+
+const baseConfig = tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic
+);
+
+/** @type FlatConfig */
+const globalConfig = { languageOptions: { globals: globals.browser } };
 
 /** @type FlatConfig */
 const eslintConfig = {
-  ignores: ['./dist'],
+  files: ['**/*.ts', '**/*.tsx'],
   plugins: {
-    functional: eslintPluginFunctional,
+    functional,
+  },
+  languageOptions: {
+    parserOptions: {
+      project: ['./tsconfig.json', './tsconfig.node.json'],
+    },
   },
   rules: {
     'no-console': ['error', { allow: ['warn', 'error'] }],
@@ -22,42 +36,20 @@ const eslintConfig = {
       'error',
       { ignoreImmediateMutation: true, ignoreClasses: true, ignoreAccessorPattern: ['draft*.*'] },
     ],
-  },
-};
-
-/** @type FlatConfig */
-const typescriptConfig = {
-  files: ['**/*.ts', '**/*.tsx'],
-  languageOptions: {
-    parser: typescriptEslintParser,
-    parserOptions: {
-      project: ['./tsconfig.json', './tsconfig.node.json'],
-    },
-  },
-  plugins: {
-    '@typescript-eslint': typescriptEslint,
-  },
-  rules: {
-    ...typescriptEslint.configs.recommended.rules,
-    ...eslintConfigStandardWithTypescript.rules,
-    '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/triple-slash-reference': 'error',
-    '@typescript-eslint/semi': 'off',
-    '@typescript-eslint/comma-dangle': 'off',
-    '@typescript-eslint/no-misused-promises': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-confusing-void-expression': 'off',
-    '@typescript-eslint/strict-boolean-expressions': 'off',
-    '@typescript-eslint/promise-function-async': 'off',
-    '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
-        multiline: { delimiter: 'comma', requireLast: true },
-        singleline: { delimiter: 'comma', requireLast: false },
+        multiline: { delimiter: 'semi', requireLast: true },
+        singleline: { delimiter: 'semi', requireLast: true },
         overrides: {
-          interface: { multiline: { delimiter: 'semi', requireLast: true } },
-          typeLiteral: { multiline: { delimiter: 'semi', requireLast: true } },
+          interface: {
+            multiline: { delimiter: 'semi', requireLast: true },
+            singleline: { delimiter: 'semi', requireLast: true },
+          },
+          typeLiteral: {
+            multiline: { delimiter: 'semi', requireLast: true },
+            singleline: { delimiter: 'semi', requireLast: true },
+          },
         },
       },
     ],
@@ -79,16 +71,16 @@ const reactConfig = {
     },
   },
   plugins: {
-    react: eslintPluginReact,
-    'react-hooks': eslintPluginReactHooks,
+    react,
+    'react-hooks': hooks,
   },
   rules: {
-    ...eslintPluginReactHooks.configs.recommended.rules,
-    ...eslintPluginReact.configs.recommended.rules,
-    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-leaked-render.md
+    ...react.configs.recommended.rules,
+    ...hooks.configs.recommended.rules,
+    '@typescript-eslint/no-empty-interface': 'off',
     'react/jsx-no-leaked-render': ['error', { validStrategies: ['ternary', 'coerce'] }],
   },
 };
 
 /** @type Array<FlatConfig> */
-export default [eslintConfig, typescriptConfig, reactConfig];
+export default [...baseConfig, globalConfig, eslintConfig, reactConfig];
