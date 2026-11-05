@@ -33,7 +33,7 @@
     "react-router-dom": "6.18.0"
   },
   "devDependencies": {
-    "@eslint/compat": "1.0.3",
+    "@eslint/compat": "1.4.1",
     "@eslint/js": "9.4.0",
     "@testing-library/react": "14.1.0",
     "@types/node": "20.9.0",
